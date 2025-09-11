@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Gambar</title>
+  </head>
+  <body>
+    <h1>Contoh Gambar dalam HTML</h1>
+
+    <!-- Gambar dengan alt text -->
+    <h2>Gambar Lokal</h2>
+    <img src="images/kucing.jpg" alt="Foto Kucing" width="300" />
+    <p>Gambar di atas adalah contoh gambar lokal dengan lebar 300px.</p>
+
+    <!-- Gambar dengan ukuran berbeda -->
+    <h2>Gambar dengan Ukuran Berbeda</h2>
+    <img
+      src="images/kucing.jpg"
+      alt="Gambar Kucing Kecil"
+      width="150"
+      height="100"
+    />
+    <img
+      src="images/kucing.jpg"
+      alt="Gambar Kucing Sedang"
+      width="250"
+      height="170"
+    />
+
+    <!-- Gambar dari internet -->
+    <h2>Gambar dari Internet</h2>
+    <img
+      src="https://picsum.photos/300/200"
+      alt="Contoh Gambar Acak dari Internet"
+      width="300"
+    />
+
+    <!-- Gambar sebagai link -->
+    <h2>Gambar sebagai Link</h2>
+    <a href="https://www.wikipedia.org">
+      <img
+        src="https://picsum.photos/200/100"
+        alt="Klik gambar ini untuk ke Wikipedia"
+      />
+    </a>
+
+    <!-- Figure dan figcaption -->
+    <h2>Gambar dengan Caption</h2>
+    <figure>
+      <img
+        src="https://picsum.photos/400/250"
+        alt="Foto Pemandangan Acak"
+        width="400"
+      />
+      <figcaption>Pemandangan indah dari foto acak internet</figcaption>
+    </figure>
+
+    <!-- Note -->
+    <p>
+      <em>
+        Note: Untuk gambar lokal, buatlah folder <b>images</b> di dalam folder
+        ini dan masukkan file gambar (misalnya <code>kucing.jpg</code>).
+      </em>
+    </p>
+  </body>
+</html>
