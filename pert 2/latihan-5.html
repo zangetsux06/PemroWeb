@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan 5 - Laboratorium CSS Box Model</title>
+    <link rel="stylesheet" href="latihan-5.css" />
+  </head>
+  <body>
+    <h1>Laboratorium CSS Box Model</h1>
+
+    <div class="section">
+      <h2>Anatomi Sebuah Elemen</h2>
+      <p>
+        Setiap elemen HTML pada dasarnya adalah sebuah kotak. Kotak ini terdiri
+        dari empat lapisan: konten, padding, border, dan margin. Visualisasi di
+        bawah ini akan membantu Anda memahaminya.
+      </p>
+
+      <div class="box-model-demo">
+        <div class="margin-demo">
+          <div class="border-demo">
+            <div class="padding-demo">
+              <div class="content-demo">Konten</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-labels">
+          <span class="label-margin">Margin</span>
+          <span class="label-border">Border</span>
+          <span class="label-padding">Padding</span>
+          <span class="label-content">Content</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Eksplorasi Setiap Lapisan</h2>
+
+      <h3>Margin: Jarak di Luar Border</h3>
+      <div class="margin-all">
+        Elemen ini memiliki margin 15px di semua sisi.
+      </div>
+      <div class="margin-auto">
+        Elemen ini menggunakan `margin: auto` untuk berada di tengah.
+      </div>
+
+      <h3>Padding: Jarak di Dalam Border</h3>
+      <div class="padding-all">
+        Elemen ini memiliki padding 20px di semua sisi.
+      </div>
+      <div class="padding-individual">
+        Elemen ini punya padding individual (atas: 5px, kanan: 15px, bawah:
+        10px, kiri: 20px).
+      </div>
+
+      <h3>Border: Garis Pembatas</h3>
+      <div class="border-solid">Border Solid</div>
+      <div class="border-dashed">Border Dashed</div>
+      <div class="border-dotted">Border Dotted</div>
+      <div class="border-double">Border Double</div>
+    </div>
+
+    <div class="section">
+      <h2>Mengontrol Ukuran & Bentuk</h2>
+      <h3>Perbedaan `box-sizing`</h3>
+      <p>
+        Kedua kotak di bawah ini memiliki `width: 250px`. Namun, ukuran totalnya
+        berbeda karena properti `box-sizing`.
+      </p>
+      <div class="content-box">
+        <b>content-box:</b> Lebar totalnya adalah 250px + 40px padding + 10px
+        border = 300px.
+      </div>
+      <div class="border-box">
+        <b>border-box:</b> Lebar totalnya tetap 250px. Padding dan border
+        dimasukkan ke dalam.
+      </div>
+
+      <h3>Bermain dengan `border-radius`</h3>
+      <div class="border-radius-demo">
+        <div class="padding-all radius-small">Radius Kecil</div>
+        <div class="padding-all radius-large">Radius Besar</div>
+        <div class="radius-circle">Lingkaran</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Aplikasi Praktis: Komponen & Layout</h2>
+      <div class="card">
+        <div class="card-header">
+          <h3>Ini adalah Card</h3>
+        </div>
+        <div class="card-body">
+          Dengan menggunakan padding, border, dan box-shadow, kita bisa membuat
+          komponen UI yang rapi seperti ini.
+        </div>
+      </div>
+
+      <div class="button-demo">
+        <button class="btn-primary">Tombol Utama</button>
+        <button class="btn-outline">Tombol Outline</button>
+        <button class="btn-rounded">Tombol Bulat</button>
+      </div>
+    </div>
+
+    <div class="inspector-demo">
+      <h2>Gunakan Alat Terbaik Anda: Inspector!</h2>
+      <p>
+        Untuk benar-benar memahami Box Model, cara terbaik adalah dengan
+        melihatnya langsung.
+        <b
+          >Klik kanan pada kotak biru di bawah ini dan pilih "Inspect" atau
+          "Periksa"</b
+        >. Di panel developer tools, Anda akan bisa melihat visualisasi margin,
+        border, dan padding-nya secara live.
+      </p>
+      <div class="inspect-me">INSPECT ME!</div>
+    </div>
+  </body>
+</html>

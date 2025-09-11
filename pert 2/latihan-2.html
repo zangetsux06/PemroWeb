@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan CSS 2 - Berbagai Selector</title>
+    <link rel="stylesheet" href="latihan-2.css" />
+  </head>
+  <body>
+    <h1>Demonstrasi Berbagai Selector CSS</h1>
+
+    <h4>Class dan ID Selector</h4>
+    <p class="highlight">
+      Ini adalah paragraf dengan class "highlight" yang memiliki latar belakang
+      kuning.
+    </p>
+    <div class="warning">
+      Ini adalah div peringatan dengan class "warning". Perhatikan ikon di akhir
+      yang ditambahkan oleh pseudo-element `::after`.
+    </div>
+    <p id="special">
+      Paragraf ini unik karena menggunakan ID "special" untuk styling khusus.
+    </p>
+
+    <div class="container">
+      <h2>Judul di Dalam Container</h2>
+      <p>
+        Paragraf ini adalah turunan (descendant) dari div dengan class
+        "container".
+      </p>
+      <div class="inner">
+        <p>
+          Paragraf ini lebih spesifik, berada di dalam div "inner" yang juga di
+          dalam "container".
+        </p>
+      </div>
+    </div>
+
+    <h5>Child Selector (Menu Bertingkat)</h5>
+    <ul class="menu">
+      <li>Menu Utama 1</li>
+      <li>
+        Menu Utama 2
+        <ul>
+          <li>Sub-menu A</li>
+          <li>Sub-menu B</li>
+        </ul>
+      </li>
+      <li>Menu Utama 3</li>
+    </ul>
+
+    <h6>Links, Tombol, dan Input</h6>
+    <div class="links">
+      <a href="#">Link Normal</a>
+      <a href="https://www.google.com" target="_blank"
+        >Link yang Sudah Dikunjungi</a
+      >
+      <a href="#">Coba Klik & Tahan Link Ini</a>
+    </div>
+
+    <div>
+      <input type="text" placeholder="Input tipe text" />
+      <input type="email" placeholder="Input tipe email" />
+      <input type="password" placeholder="Input tipe password" />
+      <button type="button">Tombol Atribut</button>
+    </div>
+
+    <p class="border">
+      Paragraf ini hanya diberi class "border" untuk menambahkan bingkai biru.
+    </p>
+  </body>
+</html>

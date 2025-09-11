@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan 6 - Masterclass Tata Letak CSS</title>
+    <link rel="stylesheet" href="latihan-6.css" />
+  </head>
+  <body>
+    <h1>Masterclass Tata Letak CSS</h1>
+
+    <div class="section">
+      <h2>Prinsip 1: Properti `display`</h2>
+      <p>
+        Properti `display` menentukan bagaimana sebuah elemen dirender di
+        halaman.
+        <span class="display-inline">Ini adalah elemen inline,</span> yang
+        mengalir bersama teks. Elemen di bawah ini adalah block:
+      </p>
+      <div class="display-block">
+        Ini adalah elemen `block`, ia mengambil seluruh lebar yang tersedia.
+      </div>
+      <p>Dan ini adalah `inline-block`, yang merupakan gabungan keduanya:</p>
+      <div class="display-inline-block">Box A</div>
+      <div class="display-inline-block">Box B</div>
+      <div class="display-inline-block">Box C</div>
+      <p>
+        Ada juga elemen dengan `display: none` di antara "ini" dan
+        "tersembunyi", tetapi ia
+        <span class="display-none">tidak terlihat</span> sama sekali.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Prinsip 2: Properti `position`</h2>
+      <h3>Static & Relative</h3>
+      <p>
+        Elemen `static` mengikuti alur normal. Elemen `relative` bisa digeser
+        dari posisi normalnya.
+      </p>
+      <div class="position-static">Posisi: Static</div>
+      <div class="position-relative">
+        Posisi: Relative (digeser 20px dari atas & 30px dari kiri)
+      </div>
+
+      <h3>Absolute</h3>
+      <p>
+        Elemen `absolute` diposisikan relatif terhadap kontainer ber-posisi
+        terdekatnya.
+      </p>
+      <div class="position-container relative-parent">
+        Kontainer ini (`position: relative`)
+        <div class="position-absolute">
+          Elemen `absolute` ini berada 20px dari atas & kanan kontainer.
+        </div>
+      </div>
+
+      <h3>Sticky</h3>
+      <p>
+        Scroll di dalam kotak di bawah ini untuk melihat bagaimana elemen
+        `sticky` "menempel" di atas.
+      </p>
+      <div class="sticky-container">
+        <h3 class="position-sticky">Judul Sticky</h3>
+        <p>
+          Konten paragraf...<br />Scroll ke bawah...<br />...dan lagi...<br />...dan
+          lagi...<br />...lebih banyak konten...<br />...untuk membuat area ini
+          bisa di-scroll...<br />...dan judulnya akan tetap menempel di atas
+          saat Anda scroll melewatinya.
+        </p>
+      </div>
+    </div>
+
+    <div class="position-fixed">Posisi: Fixed</div>
+
+    <div class="section">
+      <h2>Prinsip 3: `float` dan `clear`</h2>
+      <div class="float-container">
+        <div class="float-left">Float Left</div>
+        <div class="float-right">Float Right</div>
+        <p>
+          Teks ini akan mengalir di sekitar elemen yang di-float. Properti float
+          sering digunakan untuk membuat layout kolom atau membungkus teks di
+          sekitar gambar. Ini adalah teknik tata letak yang lebih tua tetapi
+          masih berguna dalam beberapa kasus.
+        </p>
+      </div>
+      <div class="clear-float">
+        Elemen ini menggunakan `clear: both` untuk "membersihkan" float di
+        atasnya.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Prinsip 4: Tumpukan (`z-index`) dan Luapan (`overflow`)</h2>
+      <h3>Z-Index: Mengatur Urutan Tumpukan</h3>
+      <div class="z-index-container">
+        <div class="z-index-1">Layer 1</div>
+        <div class="z-index-2">Layer 2</div>
+        <div class="z-index-3">Layer 3</div>
+      </div>
+
+      <h3>Overflow: Mengelola Konten Berlebih</h3>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap">
+        <div>
+          <p><b>Overflow: hidden</b></p>
+          <div class="overflow-container overflow-hidden">
+            <div class="overflow-content">
+              Konten ini lebih besar dari containernya dan akan terpotong.
+            </div>
+          </div>
+        </div>
+        <div>
+          <p><b>Overflow: scroll</b></p>
+          <div class="overflow-container overflow-scroll">
+            <div class="overflow-content">
+              Konten ini akan selalu menampilkan scrollbar.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Prinsip 5: Tata Letak Modern dengan `flexbox`</h2>
+      <h3>Flex Row (justify-content: space-between)</h3>
+      <div class="flex-container justify-between">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+      </div>
+      <h3>Flex Column (justify-content: center)</h3>
+      <div
+        class="flex-container flex-column justify-center"
+        style="height: 200px"
+      >
+        <div class="flex-item">Item A</div>
+        <div class="flex-item">Item B</div>
+      </div>
+
+      <h3>Struktur Halaman & Desain Responsif</h3>
+      <p>
+        <b>Ubah ukuran jendela browser Anda!</b> Saat lebar layar di bawah
+        768px, kolom-kolom di bawah ini akan tersusun vertikal dan elemen
+        "Fixed" akan kembali ke alur normal. Itulah kekuatan *responsive
+        design*.
+      </p>
+      <div class="page-layout">
+        <header class="page-header"><h3>Header Halaman</h3></header>
+        <main class="page-content">
+          <h4>Layout Tiga Kolom</h4>
+          <div class="three-column">
+            <div class="column">Kolom 1</div>
+            <div class="column">Kolom 2</div>
+            <div class="column">Kolom 3</div>
+          </div>
+        </main>
+        <footer class="page-footer">Footer Halaman &copy; 2025</footer>
+      </div>
+    </div>
+  </body>
+</html>
