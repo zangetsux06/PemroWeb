@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@arejaa__ • Tailwind Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white">
+    <main class="max-w-5xl mx-auto px-4 py-4">
+      <!-- HEADER -->
+      <section class="flex gap-4 items-center">
+        <img
+          src="../assets/img/avatar.jpeg"
+          alt="avatar @arejaa__"
+          class="w-28 h-28 rounded-full border border-neutral-700 object-cover"
+        />
+
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="font-semibold">@arejaa__</span>
+            <button class="px-3 py-1.5 rounded bg-white text-black text-sm">
+              Follow
+            </button>
+            <button
+              class="px-3 py-1.5 rounded border border-neutral-600 text-sm"
+            >
+              Edit profile
+            </button>
+            <button
+              class="p-2 rounded border border-neutral-600"
+              aria-label="Settings"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8.94 3.5a7.98 7.98 0 0 0-.17-1.66l2.08-1.61-2-3.46-2.55 1A8.1 8.1 0 0 0 15.8 3l-.4-2.7h-4.8L10.2 3a8.1 8.1 0 0 0-2.5 1.27l-2.55-1-2 3.46 2.08 1.61c-.1.54-.16 1.09-.17 1.66.01.57.07 1.12.17 1.66L3.15 15l2 3.46 2.55-1c.77.52 1.61.93 2.5 1.21l.4 2.73h4.8l.4-2.73c.89-.28 1.73-.69 2.5-1.21l2.55 1 2-3.46-2.08-1.61c.1-.54.16-1.09.17-1.66Z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex gap-6 mt-2 text-center md:text-left">
+            <div>
+              <span class="font-semibold">4</span>
+              <span class="text-neutral-400 text-sm">posts</span>
+            </div>
+            <div>
+              <span class="font-semibold">255</span>
+              <span class="text-neutral-400 text-sm">followers</span>
+            </div>
+            <div>
+              <span class="font-semibold">207</span>
+              <span class="text-neutral-400 text-sm">following</span>
+            </div>
+          </div>
+
+          <div class="mt-2">
+            <div class="font-semibold">ja</div>
+            <div class="text-neutral-400 text-sm">he/him</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="mt-5">
+        <div class="flex gap-4 overflow-x-auto pb-2">
+          <div class="text-center">
+            <img
+              class="w-16 h-16 rounded-full border border-neutral-700 object-cover mx-auto"
+              src="../assets/img/highlight1.jpg"
+              alt="me."
+            />
+            <div class="text-xs mt-1">me.</div>
+          </div>
+          <div class="text-center">
+            <img
+              class="w-16 h-16 rounded-full border border-neutral-700 object-cover mx-auto"
+              src="../assets/img/highlight2.jpeg"
+              alt="Alter"
+            />
+            <div class="text-xs mt-1">Alter</div>
+          </div>
+          <div class="text-center">
+            <img
+              class="w-16 h-16 rounded-full border border-neutral-700 object-cover mx-auto"
+              src="../assets/img/highlight3.jpeg"
+              alt="Study"
+            />
+            <div class="text-xs mt-1">Study</div>
+          </div>
+          <div class="text-center">
+            <img
+              class="w-16 h-16 rounded-full border border-neutral-700 object-cover mx-auto"
+              src="../assets/img/highlight4.jpeg"
+              alt="sky"
+            />
+            <div class="text-xs mt-1">sky</div>
+          </div>
+          <div class="text-center">
+            <img
+              class="w-16 h-16 rounded-full border border-neutral-700 object-cover mx-auto"
+              src="../assets/img/highlight5.jpeg"
+              alt="Random"
+            />
+            <div class="text-xs mt-1">Random</div>
+          </div>
+          <div class="text-center">
+            <img
+              class="w-16 h-16 rounded-full border border-neutral-700 object-cover mx-auto"
+              src="../assets/img/highlight6.jpeg"
+              alt="HINDIA"
+            />
+            <div class="text-xs mt-1">HINDIA 🔥</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TABS (dengan ikon SVG inline) -->
+      <section class="mt-3 border-y border-neutral-800">
+        <div class="flex justify-center gap-10">
+          <!-- POSTS -->
+          <button
+            data-tab="grid"
+            class="py-3 flex items-center gap-2 text-white border-b-2 border-white"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z" />
+            </svg>
+            <span class="hidden md:inline">Posts</span>
+          </button>
+
+          <!-- REELS -->
+          <button
+            data-tab="reels"
+            class="py-3 flex items-center gap-2 text-neutral-400"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11z"
+              />
+              <rect x="6" y="6" width="4" height="2" rx="1" />
+              <rect x="14" y="6" width="4" height="2" rx="1" />
+              <path d="M10 9.5v5l5-2.5-5-2.5z" />
+            </svg>
+            <span class="hidden md:inline">Reels</span>
+          </button>
+
+          <!-- TAGGED -->
+          <button
+            data-tab="tagged"
+            class="py-3 flex items-center gap-2 text-neutral-400"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" />
+              <path d="M4 19.5C4 16.74 7.58 14.5 12 14.5s8 2.24 8 5v1H4v-1z" />
+            </svg>
+            <span class="hidden md:inline">Tagged</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- GRIDS -->
+      <section class="mt-3">
+        <!-- 1 kol (mobile) • 3 kol (md) • 4 kol (lg) -->
+        <div
+          id="grid"
+          class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1"
+        >
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post1.webp"
+              class="w-full h-full object-cover"
+              alt="post1"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post2.webp"
+              class="w-full h-full object-cover"
+              alt="post2"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post3.jpeg"
+              class="w-full h-full object-cover"
+              alt="post3"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post4.jpeg"
+              class="w-full h-full object-cover"
+              alt="post4"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post5.jpeg"
+              class="w-full h-full object-cover"
+              alt="post5"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post6.jpeg"
+              class="w-full h-full object-cover"
+              alt="post6"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post7.jpeg"
+              class="w-full h-full object-cover"
+              alt="post7"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post8.jpeg"
+              class="w-full h-full object-cover"
+              alt="post8"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post9.jpeg"
+              class="w-full h-full object-cover"
+              alt="post9"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post10.jpeg"
+              class="w-full h-full object-cover"
+              alt="post10"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post11.jpeg"
+              class="w-full h-full object-cover"
+              alt="post11"
+            />
+          </article>
+          <article class="aspect-square overflow-hidden">
+            <img
+              loading="lazy"
+              src="../assets/img/post12.jpeg"
+              class="w-full h-full object-cover"
+              alt="post12"
+            />
+          </article>
+        </div>
+
+        <!-- Reels & Tagged -->
+        <div id="reels" class="hidden text-center text-neutral-400 py-8">
+          Belum ada Reels
+        </div>
+        <div id="tagged" class="hidden text-center text-neutral-400 py-8">
+          Belum ada foto ditandai
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Tab: toggle tampilan & gaya aktif
+      const btns = document.querySelectorAll("[data-tab]");
+      const secs = { grid: "grid", reels: "reels", tagged: "tagged" };
+      function show(which) {
+        Object.values(secs).forEach((id) =>
+          document.getElementById(id).classList.add("hidden")
+        );
+        document.getElementById(which).classList.remove("hidden");
+        btns.forEach((b) => {
+          b.classList.remove("text-white", "border-b-2", "border-white");
+          b.classList.add("text-neutral-400");
+        });
+        const active = document.querySelector(`[data-tab="${which}"]`);
+        active.classList.remove("text-neutral-400");
+        active.classList.add("text-white", "border-b-2", "border-white");
+      }
+      btns.forEach((b) =>
+        b.addEventListener("click", () => show(b.dataset.tab))
+      );
+      show("grid"); // default aktif
+    </script>
+  </body>
+</html>
