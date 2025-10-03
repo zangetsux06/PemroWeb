@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard Indonesia - Cek Cuaca Kota</title>
+    <meta
+      name="description"
+      content="Dashboard cuaca interaktif untuk kota-kota di Indonesia. Lihat suhu dan kondisi cuaca terkini."
+    />
+    <link rel="stylesheet" href="dashboard_cuaca.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="background-pattern"></div>
+
+      <div class="card">
+        <div class="card-content">
+          <!-- Header -->
+          <div class="header">
+            <div class="icon-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
+              </svg>
+            </div>
+            <h1 class="title">Weather Dashboard</h1>
+            <p class="subtitle">Masukkan nama kota untuk melihat cuaca</p>
+          </div>
+
+          <!-- Input Section -->
+          <div class="input-section">
+            <div class="input-group">
+              <label for="city-input" class="label">Nama Kota</label>
+              <input
+                type="text"
+                id="city-input"
+                class="input"
+                placeholder="Contoh: Jakarta, Bandung, Surabaya..."
+                autocomplete="off"
+              />
+            </div>
+
+            <!-- Suggestions Dropdown -->
+            <div id="suggestions" class="suggestions hidden"></div>
+
+            <button id="show-weather-btn" class="btn">Tampilkan Cuaca</button>
+          </div>
+
+          <!-- Weather Display -->
+          <div id="weather-result" class="weather-result hidden">
+            <div class="weather-icon-large" id="weather-icon-large"></div>
+            <h2 class="weather-city" id="weather-city"></h2>
+            <div class="weather-temp" id="weather-temp"></div>
+            <div class="weather-condition" id="weather-condition"></div>
+          </div>
+
+          <!-- Info Box -->
+          <div class="info-box">
+            <p class="info-title">
+              <span class="emoji">💡</span>
+              Tips:
+            </p>
+            <ul class="info-list">
+              <li>• Hasil cuaca akan muncul di Console Log</li>
+              <li>• Buka Developer Tools (F12) untuk melihat output</li>
+              <li>• Data tersedia untuk 40+ kota di Indonesia</li>
+            </ul>
+          </div>
+
+          <!-- City Examples -->
+          <div class="examples-section">
+            <p class="examples-title">Contoh kota yang tersedia:</p>
+            <div id="city-examples" class="city-tags"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dashboard_cuaca.js"></script>
+  </body>
+</html>
