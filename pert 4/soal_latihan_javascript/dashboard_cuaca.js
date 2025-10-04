@@ -1,56 +1,30 @@
-// Data cuaca untuk kota-kota di Indonesia
 const weatherData = {
   // Sumatera
-  "Banda Aceh": { temperature: 29, condition: "Cerah" },
   Medan: { temperature: 31, condition: "Berawan" },
-  Padang: { temperature: 28, condition: "Hujan Ringan" },
-  Pekanbaru: { temperature: 32, condition: "Cerah" },
-  Jambi: { temperature: 30, condition: "Berawan" },
   Palembang: { temperature: 33, condition: "Panas Terik" },
-  Bengkulu: { temperature: 27, condition: "Hujan Ringan" },
-  "Bandar Lampung": { temperature: 31, condition: "Cerah" },
 
   // Jawa
   Jakarta: { temperature: 30, condition: "Cerah" },
-  Bogor: { temperature: 26, condition: "Hujan Ringan" },
-  Depok: { temperature: 29, condition: "Berawan" },
-  Tangerang: { temperature: 31, condition: "Cerah" },
-  Bekasi: { temperature: 30, condition: "Berawan" },
   Bandung: { temperature: 25, condition: "Hujan Ringan" },
-  Cirebon: { temperature: 32, condition: "Panas Terik" },
-  Semarang: { temperature: 31, condition: "Cerah" },
-  Yogyakarta: { temperature: 29, condition: "Berawan" },
-  Solo: { temperature: 30, condition: "Cerah" },
   Surabaya: { temperature: 33, condition: "Panas Terik" },
-  Malang: { temperature: 24, condition: "Sejuk" },
-  Banyuwangi: { temperature: 28, condition: "Berawan" },
+  Yogyakarta: { temperature: 29, condition: "Berawan" },
 
   // Kalimantan
   Pontianak: { temperature: 32, condition: "Hujan Ringan" },
-  Palangkaraya: { temperature: 31, condition: "Berawan" },
-  Banjarmasin: { temperature: 33, condition: "Panas Terik" },
-  Samarinda: { temperature: 28, condition: "Mendung" },
   Balikpapan: { temperature: 30, condition: "Berawan" },
-  Tarakan: { temperature: 29, condition: "Cerah" },
+  Banjarmasin: { temperature: 33, condition: "Panas Terik" },
+  Samarinda: { temperature: 34, condition: "Panas Terik" },
 
   // Sulawesi
-  Manado: { temperature: 28, condition: "Hujan Ringan" },
-  Gorontalo: { temperature: 30, condition: "Cerah" },
-  Palu: { temperature: 31, condition: "Panas Terik" },
   Makassar: { temperature: 32, condition: "Cerah" },
-  Kendari: { temperature: 29, condition: "Berawan" },
+  Manado: { temperature: 28, condition: "Hujan Ringan" },
 
   // Bali & Nusa Tenggara
   Denpasar: { temperature: 31, condition: "Cerah" },
-  Mataram: { temperature: 30, condition: "Berawan" },
-  Kupang: { temperature: 33, condition: "Panas Terik" },
 
   // Maluku & Papua
-  Ambon: { temperature: 28, condition: "Hujan Ringan" },
-  Ternate: { temperature: 29, condition: "Berawan" },
   Jayapura: { temperature: 30, condition: "Cerah" },
-  Sorong: { temperature: 31, condition: "Berawan" },
-  Manokwari: { temperature: 29, condition: "Hujan Ringan" },
+  Ambon: { temperature: 28, condition: "Hujan Ringan" },
 };
 
 // Fungsi untuk mendapatkan icon cuaca
@@ -85,7 +59,6 @@ function getCityWeather(cityName) {
 // Fungsi untuk mendapatkan tema warna berdasarkan kondisi
 function getWeatherTheme(condition) {
   const lowerCondition = condition.toLowerCase();
-
   if (lowerCondition.includes("sejuk") || lowerCondition === "dingin") {
     return "weather-cool";
   } else if (
@@ -97,12 +70,12 @@ function getWeatherTheme(condition) {
     return "weather-sunny";
   } else if (lowerCondition.includes("hujan")) {
     return "weather-rainy";
-  } else if (lowerCondition.includes("mendung")) {
-    return "weather-cloudy";
-  } else if (lowerCondition.includes("berawan")) {
+  } else if (
+    lowerCondition.includes("mendung") ||
+    lowerCondition.includes("berawan")
+  ) {
     return "weather-cloudy";
   }
-
   return "weather-default";
 }
 
@@ -121,10 +94,8 @@ const weatherConditionEl = document.getElementById("weather-condition");
 cityInput.addEventListener("input", handleInputChange);
 cityInput.addEventListener("focus", handleInputFocus);
 showWeatherBtn.addEventListener("click", handleShowWeather);
-
-// Menutup suggestions jika klik di luar
 document.addEventListener("click", (e) => {
-  if (!e.target.closest(".input-section")) {
+  if (!e.target.closest(".relative")) {
     suggestionsDiv.classList.add("hidden");
   }
 });
@@ -132,7 +103,6 @@ document.addEventListener("click", (e) => {
 // Handle input change untuk autocomplete
 function handleInputChange(e) {
   const value = e.target.value;
-
   if (value.length > 0) {
     const allCities = getAllCities();
     const filtered = allCities.filter((city) =>
@@ -157,16 +127,15 @@ function showSuggestions(cities) {
     suggestionsDiv.classList.add("hidden");
     return;
   }
-
   suggestionsDiv.innerHTML = "";
   cities.forEach((city) => {
     const button = document.createElement("button");
-    button.className = "suggestion-item";
+    button.className =
+      "w-full px-4 py-2 text-left text-sm text-slate-700 hover:bg-cyan-500/10 transition-colors";
     button.textContent = city;
     button.addEventListener("click", () => selectCity(city));
     suggestionsDiv.appendChild(button);
   });
-
   suggestionsDiv.classList.remove("hidden");
 }
 
@@ -174,76 +143,68 @@ function showSuggestions(cities) {
 function selectCity(city) {
   cityInput.value = city;
   suggestionsDiv.classList.add("hidden");
+  handleShowWeather();
 }
 
 // Menampilkan cuaca di console dan UI
 function handleShowWeather() {
   const cityName = cityInput.value.trim();
-
   if (!cityName) {
     console.log("⚠️ Mohon masukkan nama kota!");
     weatherResultDiv.classList.add("hidden");
-    document.body.className = "weather-default";
+    document.body.className =
+      "weather-default flex items-center justify-center min-h-screen p-4 transition-all duration-500";
     return;
   }
-
   const weather = getCityWeather(cityName);
-
   if (weather) {
-    // Output ke console (sesuai tugas)
     console.log(`\n🌤️ Cuaca di ${cityName}:`);
     console.log(`🌡️ Suhu: ${weather.temperature}°C`);
     console.log(`☁️ Kondisi: ${weather.condition}\n`);
-
-    // Tampilkan di UI
     weatherIconLarge.textContent = getWeatherIcon(weather.condition);
     weatherCityEl.textContent = cityName;
     weatherTempEl.textContent = `${weather.temperature}°C`;
     weatherConditionEl.textContent = weather.condition;
     weatherResultDiv.classList.remove("hidden");
-
-    // Ubah background sesuai cuaca
     const theme = getWeatherTheme(weather.condition);
-    document.body.className = theme;
+    document.body.className = `${theme} flex items-center justify-center min-h-screen p-4 transition-all duration-500`;
   } else {
     console.log(`\n❌ Kota "${cityName}" tidak ditemukan dalam database.`);
     console.log(
       `💡 Coba kota lain seperti: Jakarta, Bandung, Surabaya, dll.\n`
     );
     weatherResultDiv.classList.add("hidden");
-    document.body.className = "weather-default";
+    document.body.className =
+      "weather-default flex items-center justify-center min-h-screen p-4 transition-all duration-500";
   }
 }
 
 // Inisialisasi contoh kota
 function initializeCityExamples() {
-  const exampleCities = ["Jakarta", "Bandung", "Surabaya", "Medan"];
-
+  const exampleCities = ["Jakarta", "Bandung", "Surabaya", "Medan", "Makassar"];
   exampleCities.forEach((city) => {
     const weather = getCityWeather(city);
+    if (!weather) return;
     const button = document.createElement("button");
-    button.className = "city-tag";
-
+    button.className =
+      "city-tag px-3 py-1.5 bg-cyan-500/10 rounded-full text-xs font-medium text-cyan-800 hover:bg-cyan-500/20 hover:scale-105 transition-all inline-flex items-center gap-1.5";
     const icon = document.createElement("span");
-    icon.className = "weather-icon";
     icon.textContent = getWeatherIcon(weather.condition);
-
     const text = document.createTextNode(city);
-
     button.appendChild(icon);
     button.appendChild(text);
     button.addEventListener("click", () => selectCity(city));
-
     cityExamplesDiv.appendChild(button);
   });
 }
 
-// Jalankan inisialisasi saat halaman dimuat
+// inisialisasi saat halaman dimuat
 initializeCityExamples();
 
 // Tambahkan event listener untuk Enter key
 cityInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     handleShowWeather();
+    suggestionsDiv.classList.add("hidden");
   }
 });
