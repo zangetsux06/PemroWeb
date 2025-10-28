@@ -1,0 +1,123 @@
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f3f4f6; /* gray-100 */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #ffffff;
+  padding: 24px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 380px;
+}
+
+.card-2 {
+  background: #ffffff;
+  padding: 24px;
+  margin: 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 600px;
+  background-color: white;
+  padding: 15px;
+  border-left: 4px solid #503535;
+  border-radius: px;
+}
+
+.card-3 {
+  background: #ffffff;
+  padding: 40px;
+  margin: 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 600px;
+}
+
+th,
+td {
+  border: 1px solid #b0bec5;
+  padding: 8px;
+}
+
+th {
+  background: #eceff1;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #000000; /* gray-800 */
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000000; /* gray-600 */
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #000000; /* blue-600 */
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 16px;
+  background: #000000;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #000000;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #485368;
+}
+
+p {
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+span {
+  font-weight: 600;
+  color: #111827;
+}

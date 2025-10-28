@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Nilai Mahasiswa</title>
+    <link rel="stylesheet" href="uts_pratikum.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1 id="header-title">Input Data</h1>
+
+      <div class="mb-4">
+        <label for="input-nama">Nama Lengkap:</label>
+        <input type="text" id="input-nama" placeholder="Masukkan Nama" />
+      </div>
+
+      <div class="mb-4">
+        <label for="input-nilai">NIM:</label>
+        <input type="text" id="input-nim" placeholder="Masukkan NIM" />
+      </div>
+
+      <div class="mb-4">
+        <label for="input-semester">Semester:</label>
+        <input type="text" id="input-semester" placeholder="Masukkan Semester" />
+      </div>
+
+      <div class="mb-4">
+      <!-- <form action="/action_page.php"> -->
+  <label for="Program-studi">Pilih Program Studi:</label>
+  <select name="Program-studi" id="">
+    <option value="pilih">-Pilih-</option>
+    <option value="Teknik Informatika">Teknik Informatika</option>
+    <option value="Teknik MEsin">Teknik Mesin</option>
+    <option value="Teknik Geologi">Teknik Geologi</option>
+  </select>
+</div>
+
+<div>
+<form>
+  <label for="email">EMAIL:</label>
+  <input type="email" id="email" name="email" placeholder="email@gmail.com">
+</form>
+</div>
+
+ <button class="btn-run" onclick="runExercises()">Kirim Data</button>
+
+
+
+ 
+
+  
+      <p>isi data Mahasiswa dengan benar<span id="isi-data"></span></p>
+      
+    </div>
+
+    <div>
+<div class="card-2">
+      <h1 id="header-title">Informasi Pengiriman</h1>
+      <p>Apa yang terjadi saat anda klik "Kirim Data"?</p>
+      <ul class="submenu">
+        
+        
+            <li><p> Data ditampilkan di console</li>
+            <li><p> Data disimpan di array</li>
+            <li><p> Jumlah data di-udpate</li>
+            <li><p> From akan kosong kembali</li>           
+            
+          </ul>
+    </div>
+
+    <div class="card-3">
+      <h1 id="header-title">Table Mahasiswa</h1>
+<hr>
+ <table border="1" width="500">
+  <tr>
+    <th>No</th>
+    <th>Nama</th>
+    <th>info</th>
+  </tr>
+    <td rowspan="2" valign="top">1</td>
+    <td>Budi santoso</td>
+  </tr>
+
+  <tr>
+    <!-- <td>Baris 2 Kolom 2</td> -->
+  </tr>
+    </tr>
+
+    <td rowspan="2" valign="top">2</td>
+    <td>Siti Nurhaliza</td>
+  </tr>
+  
+  <tr>
+    <!-- <td>Baris 2 Kolom 2</td> -->
+
+  </tr>
+</table>
+</div>
+
+
+
+
+    
+    <script src="uts_pratikum.js"></script>
+  </body>
+</html>
